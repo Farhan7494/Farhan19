@@ -1,0 +1,1584 @@
+{
+  "CWE-1426": [
+    {
+      owasp_llm_id: "LLM01",
+      "owasp_llm_name": "Prompt Injection",
+      "cwe_name": "Improper Validation of Generative AI Output",
+      "cwe_desc": "This CWE is directly related, as prompt injection often involves the model generating output that is not properly validated, leading to further attacks.",
+      "description": "Manipulating LLMs via crafted inputs to alter behavior, bypass safeguards, or exfiltrate data.",
+      "mitre": [{
+  mitre_id: 'AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_desc: 'Directly addresses this vulnerability, as it involves inputting malicious prompts to cause an LLM to act outside its intended purpose.',
+},
+{
+  mitre_id: 'AML.T0042',
+  mitre_technique_name: 'Craft Adversarial Data',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0042',
+  mitre_technique_desc: 'Could be used to generate the malicious prompts.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_desc: 'If the injection occurs through an API.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_desc: 'An attacker might develop tools or methods to craft effective prompt injections.',
+}]
+    }
+  ],
+  "CWE-77": [
+    {
+      owasp_llm_id: "LLM01",
+      "owasp_llm_name": "Prompt Injection",
+      "cwe_name": "Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+      "cwe_desc": "If the prompt injection leads to the execution of commands on the underlying system or within connected tools.",
+      "description": "Manipulating LLMs via crafted inputs to alter behavior, bypass safeguards, or exfiltrate data.",
+      "mitre": [{
+  mitre_id: 'AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_desc: 'Directly addresses this vulnerability, as it involves inputting malicious prompts to cause an LLM to act outside its intended purpose.',
+},
+{
+  mitre_id: 'AML.T0042',
+  mitre_technique_name: 'Craft Adversarial Data',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0042',
+  mitre_technique_desc: 'Could be used to generate the malicious prompts.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_desc: 'If the injection occurs through an API.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_desc: 'An attacker might develop tools or methods to craft effective prompt injections.',
+},]
+    },
+    {
+      owasp_llm_id: "LLM02",
+      "owasp_llm_name": "Insecure Output Handling",
+      "cwe_name": "Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+      "cwe_desc": "If the unsanitized output is used in a command executed by a downstream system.",
+      "description": "Failure to properly validate, sanitize, and handle LLM outputs before they are passed downstream to other systems, leading to vulnerabilities like XSS, CSRF, RCE.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the insecure output impacts plugins that interact with other systems.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If output leads to misconfigurations or privilege escalation in connected systems.',
+},
+{
+  mitre_id: 'AML.T0027',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0027',
+  mitre_technique_name: 'Hijack ML Model Inference',
+  mitre_technique_desc: "In cases where malicious output could manipulate how the model's inference is used.",
+},]
+    },
+    {
+      owasp_llm_id: "LLM07",
+      "owasp_llm_name": "Insecure Plugin Design",
+      "cwe_name": "Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+      "cwe_desc": "If a plugin executes system commands based on unsanitized LLM output.",
+      "description": "Vulnerabilities in plugins or extensions added to LLMs that process untrusted inputs or have insufficient access controls, leading to exploits like SQL injection or remote code execution.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'Direct match.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the plugin exploits misconfigurations.',
+},
+{
+  mitre_id: 'AML.T0044',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0044',
+  mitre_technique_name: 'LLM Plugin Access',
+  mitre_technique_desc: 'An attacker might first gain access to a vulnerable plugin.',
+},]
+    }
+  ],
+  "CWE-94": [
+    {
+      owasp_llm_id: "LLM01",
+      "owasp_llm_name": "Prompt Injection",
+      "cwe_name": "Improper Control of Generation of Code ('Code Injection')",
+      "cwe_desc": "If the prompt causes the LLM to generate malicious code that is then executed.",
+      "description": "Manipulating LLMs via crafted inputs to alter behavior, bypass safeguards, or exfiltrate data.",
+      "mitre": [{
+  mitre_id: 'AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_desc: 'Directly addresses this vulnerability, as it involves inputting malicious prompts to cause an LLM to act outside its intended purpose.',
+},
+{
+  mitre_id: 'AML.T0042',
+  mitre_technique_name: 'Craft Adversarial Data',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0042',
+  mitre_technique_desc: 'Could be used to generate the malicious prompts.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_desc: 'If the injection occurs through an API.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_desc: 'An attacker might develop tools or methods to craft effective prompt injections.',
+},]
+    },
+    {
+      owasp_llm_id: "LLM02",
+      "owasp_llm_name": "Insecure Output Handling",
+      "cwe_name": "Improper Control of Generation of Code ('Code Injection')",
+      "cwe_desc": "If the unsanitized output can be interpreted as executable code by downstream systems.",
+      "description": "Failure to properly validate, sanitize, and handle LLM outputs before they are passed downstream to other systems, leading to vulnerabilities like XSS, CSRF, RCE.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the insecure output impacts plugins that interact with other systems.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If output leads to misconfigurations or privilege escalation in connected systems.',
+},
+{
+  mitre_id: 'AML.T0027',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0027',
+  mitre_technique_name: 'Hijack ML Model Inference',
+  mitre_technique_desc: "In cases where malicious output could manipulate how the model's inference is used.",
+},]
+    },
+    {
+      owasp_llm_id: "LLM07",
+      "owasp_llm_name": "Insecure Plugin Design",
+      "cwe_name": "Improper Control of Generation of Code ('Code Injection')",
+      "cwe_desc": "If a plugin generates and executes code based on untrusted input.",
+      "description": "Vulnerabilities in plugins or extensions added to LLMs that process untrusted inputs or have insufficient access controls, leading to exploits like SQL injection or remote code execution.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'Direct match.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the plugin exploits misconfigurations.',
+},
+{
+  mitre_id: 'AML.T0044',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0044',
+  mitre_technique_name: 'LLM Plugin Access',
+  mitre_technique_desc: 'An attacker might first gain access to a vulnerable plugin.',
+},]
+    }
+  ],
+  "CWE-20": [
+    {
+      owasp_llm_id: "LLM01",
+      "owasp_llm_name": "Prompt Injection",
+      "cwe_name": "Improper Input Validation",
+      "cwe_desc": "While prompt injection isn't always about invalid input in the traditional sense, the lack of robust input validation contributes to this vulnerability.",
+      "description": "Manipulating LLMs via crafted inputs to alter behavior, bypass safeguards, or exfiltrate data.",
+      "mitre": [{
+  mitre_id: 'AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_desc: 'Directly addresses this vulnerability, as it involves inputting malicious prompts to cause an LLM to act outside its intended purpose.',
+},
+{
+  mitre_id: 'AML.T0042',
+  mitre_technique_name: 'Craft Adversarial Data',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0042',
+  mitre_technique_desc: 'Could be used to generate the malicious prompts.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_desc: 'If the injection occurs through an API.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_desc: 'An attacker might develop tools or methods to craft effective prompt injections.',
+},]
+    },
+    {
+      owasp_llm_id: "LLM06",
+      "owasp_llm_name": "Sensitive Information Disclosure",
+      "cwe_name": "Improper Input Validation",
+      "cwe_desc": "If malicious prompts (a form of prompt injection) can coerce the LLM into disclosing information.",
+      "description": "LLMs inadvertently revealing confidential or private information through their responses or outputs due to improper data sanitization, poor input handling, or overly permissive outputs.",
+      "mitre": [{
+  mitre_id: 'AML.T0037',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0037',
+  mitre_technique_name: 'Exfiltrate Data',
+  mitre_technique_desc: 'The ultimate goal of disclosing sensitive information.',
+},
+{
+  mitre_id: 'AML.T0043',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_desc: 'Can be used to coerce the LLM into revealing sensitive data.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If the disclosure occurs through model responses via an API.',
+},
+{
+  mitre_id: 'AML.T0012',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Data from ML Model',
+  mitre_technique_desc: "The sensitive information is extracted from the model's knowledge or responses.",
+},
+]
+    },
+    {
+      owasp_llm_id: "LLM07",
+      "owasp_llm_name": "Insecure Plugin Design",
+      "cwe_name": "Improper Input Validation",
+      "cwe_desc": "Plugins failing to validate inputs from the LLM or users, leading to injection attacks.",
+      "description": "Vulnerabilities in plugins or extensions added to LLMs that process untrusted inputs or have insufficient access controls, leading to exploits like SQL injection or remote code execution.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'Direct match.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the plugin exploits misconfigurations.',
+},
+{
+  mitre_id: 'AML.T0044',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0044',
+  mitre_technique_name: 'LLM Plugin Access',
+  mitre_technique_desc: 'An attacker might first gain access to a vulnerable plugin.',
+},]
+    },
+    {
+      owasp_llm_id: "LLM09",
+      "owasp_llm_name": "Overreliance",
+      "cwe_name": "Improper Input Validation",
+      "cwe_desc": "Plugins failing to validate inputs from the LLM or users, leading to injection attacks.",
+      "description": "Vulnerabilities in plugins or extensions added to LLMs that process untrusted inputs or have insufficient access controls, leading to exploits like SQL injection or remote code execution.",
+      "mitre": [{
+  mitre_id: 'AML.T0036',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0036',
+  mitre_technique_name: 'Influence ML Model Decision Making',
+  mitre_technique_desc: 'If the overreliance leads to unquestioned, biased decisions.',
+},
+{
+  mitre_id: 'AML.T0043',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_desc: 'Leading to harmful advice',
+},]
+    }
+  ],
+  "CWE-116": [
+    {
+      owasp_llm_id: "LLM01",
+      "owasp_llm_name": "Prompt Injection",
+      "cwe_name": "Improper Encoding or Escaping of Output",
+      "cwe_desc": "If the LLM's output, influenced by prompt injection, is not properly encoded or escaped, leading to further injection.",
+      "description": "Manipulating LLMs via crafted inputs to alter behavior, bypass safeguards, or exfiltrate data.",
+      "mitre": [{
+  mitre_id: 'AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_desc: 'Directly addresses this vulnerability, as it involves inputting malicious prompts to cause an LLM to act outside its intended purpose.',
+},
+{
+  mitre_id: 'AML.T0042',
+  mitre_technique_name: 'Craft Adversarial Data',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0042',
+  mitre_technique_desc: 'Could be used to generate the malicious prompts.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_desc: 'If the injection occurs through an API.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_desc: 'An attacker might develop tools or methods to craft effective prompt injections.',
+},]
+    },
+    {
+      owasp_llm_id: "LLM02",
+      "owasp_llm_name": "Insecure Output Handling",
+      "cwe_name": "Improper Encoding or Escaping of Output",
+      "cwe_desc": "This is a very direct match, as the core issue is unsanitized or improperly encoded output.",
+      "description": "Failure to properly validate, sanitize, and handle LLM outputs before they are passed downstream to other systems, leading to vulnerabilities like XSS, CSRF, RCE.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the insecure output impacts plugins that interact with other systems.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If output leads to misconfigurations or privilege escalation in connected systems.',
+},
+{
+  mitre_id: 'AML.T0027',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0027',
+  mitre_technique_name: 'Hijack ML Model Inference',
+  mitre_technique_desc: "In cases where malicious output could manipulate how the model's inference is used.",
+},]
+    },
+    {
+      owasp_llm_id: "LLM06",
+      "owasp_llm_name": "Sensitive Information Disclosure",
+      "cwe_name": "Improper Encoding or Escaping of Output",
+      "cwe_desc": "If sensitive information is improperly encoded, making it susceptible to extraction.",
+      "description": "LLMs inadvertently revealing confidential or private information through their responses or outputs due to improper data sanitization, poor input handling, or overly permissive outputs.",
+      "mitre": [{
+  mitre_id: 'AML.T0037',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0037',
+  mitre_technique_name: 'Exfiltrate Data',
+  mitre_technique_desc: 'The ultimate goal of disclosing sensitive information.',
+},
+{
+  mitre_id: 'AML.T0043',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_desc: 'Can be used to coerce the LLM into revealing sensitive data.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If the disclosure occurs through model responses via an API.',
+},
+{
+  mitre_id: 'AML.T0012',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Data from ML Model',
+  mitre_technique_desc: "The sensitive information is extracted from the model's knowledge or responses.",
+},
+]
+    },
+    {
+      owasp_llm_id: "LLM09",
+      "owasp_llm_name": "Overreliance",
+      "cwe_name": "Improper Encoding or Escaping of Output",
+      "cwe_desc": "This is a very direct match, as the core issue is unsanitized or improperly encoded output.",
+      "description": "Vulnerabilities in plugins or extensions added to LLMs that process untrusted inputs or have insufficient access controls, leading to exploits like SQL injection or remote code execution.",
+      "mitre": [{
+  mitre_id: 'AML.T0036',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0036',
+  mitre_technique_name: 'Influence ML Model Decision Making',
+  mitre_technique_desc: 'If the overreliance leads to unquestioned, biased decisions.',
+},
+{
+  mitre_id: 'AML.T0043',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_desc: 'Leading to harmful advice',
+},]
+    }
+  ],
+  "CWE-79": [
+    {
+      owasp_llm_id: "LLM02",
+      "owasp_llm_name": "Insecure Output Handling",
+      "cwe_name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+      "cwe_desc": "If the unsanitized output leads to XSS vulnerabilities.",
+      "description": "Failure to properly validate, sanitize, and handle LLM outputs before they are passed downstream to other systems, leading to vulnerabilities like XSS, CSRF, RCE.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the insecure output impacts plugins that interact with other systems.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If output leads to misconfigurations or privilege escalation in connected systems.',
+},
+{
+  mitre_id: 'AML.T0027',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0027',
+  mitre_technique_name: 'Hijack ML Model Inference',
+  mitre_technique_desc: "In cases where malicious output could manipulate how the model's inference is used.",
+},]
+    }
+  ],
+  "CWE-74": [
+    {
+      owasp_llm_id: "LLM02",
+      "owasp_llm_name": "Insecure Output Handling",
+      "cwe_name": "Improper Neutralization of Special Elements in Output Used by a Third Party",
+      "cwe_desc": "Similar to CWE-116, but specifically when the output is consumed by another system.",
+      "description": "Failure to properly validate, sanitize, and handle LLM outputs before they are passed downstream to other systems, leading to vulnerabilities like XSS, CSRF, RCE.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the insecure output impacts plugins that interact with other systems.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If output leads to misconfigurations or privilege escalation in connected systems.',
+},
+{
+  mitre_id: 'AML.T0027',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0027',
+  mitre_technique_name: 'Hijack ML Model Inference',
+  mitre_technique_desc: "In cases where malicious output could manipulate how the model's inference is used.",
+},]
+    }
+  ],
+  "CWE-668": [
+    {
+      owasp_llm_id: "LLM03",
+      "owasp_llm_name": "Training Data Poisoning",
+      "cwe_name": "Exposure of Resource to Wrong Sphere",
+      "cwe_desc": "This can apply if poisoned data introduces biases or backdoors that expose the model to unintended influences.",
+      "description": "Maliciously manipulating the training data of an LLM to introduce vulnerabilities, backdoors, or biases that compromise the model's security and effectiveness.",
+      "mitre": [{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'This is a direct match, as it involves modifying training data to create vulnerabilities.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing the techniques and tools for data poisoning.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the poisoning occurs through a compromised data source in the supply chain.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'Poisoning can lead to the insertion of backdoors into the model.',
+},]
+    }
+  ],
+  "CWE-913": [
+    {
+      owasp_llm_id: "LLM03",
+      "owasp_llm_name": "Training Data Poisoning",
+      "cwe_name": "Improper Control of Interaction Frequency",
+      "cwe_desc": "While not a direct match, if the poisoning relies on repeated or specific interactions to manifest, this could be related.",
+      "description": "Maliciously manipulating the training data of an LLM to introduce vulnerabilities, backdoors, or biases that compromise the model's security and effectiveness.",
+      "mitre": [{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'This is a direct match, as it involves modifying training data to create vulnerabilities.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing the techniques and tools for data poisoning.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the poisoning occurs through a compromised data source in the supply chain.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'Poisoning can lead to the insertion of backdoors into the model.',
+},]
+    }
+  ],
+  "CWE-1021": [
+    {
+      owasp_llm_id: "LLM03",
+      "owasp_llm_name": "Training Data Poisoning",
+      "cwe_name": "Improper Restriction of Algorithmic Complexity",
+      "cwe_desc": "If poisoned data causes the model to perform in an inefficient or exploitable way that relates to its algorithmic behavior",
+      "description": "Maliciously manipulating the training data of an LLM to introduce vulnerabilities, backdoors, or biases that compromise the model's security and effectiveness.",
+      "mitre": [{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'This is a direct match, as it involves modifying training data to create vulnerabilities.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing the techniques and tools for data poisoning.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the poisoning occurs through a compromised data source in the supply chain.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'Poisoning can lead to the insertion of backdoors into the model.',
+},]
+    }
+  ],
+  "CWE-502": [
+    {
+      owasp_llm_id: "LLM03",
+      "owasp_llm_name": "Training Data Poisoning",
+      "cwe_name": "Deserialization of Untrusted Data",
+      "cwe_desc": "If the training data includes serialized objects that can be manipulated to introduce vulnerabilities during deserialization. (Less direct, but possible in complex data pipelines)",
+      "description": "Maliciously manipulating the training data of an LLM to introduce vulnerabilities, backdoors, or biases that compromise the model's security and effectiveness.",
+      "mitre": [{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'This is a direct match, as it involves modifying training data to create vulnerabilities.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing the techniques and tools for data poisoning.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the poisoning occurs through a compromised data source in the supply chain.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'Poisoning can lead to the insertion of backdoors into the model.',
+},]
+    }
+  ],
+  "CWE-749": [
+    {
+      owasp_llm_id: "LLM03",
+      "owasp_llm_name": "Training Data Poisoning",
+      "cwe_name": "Exposed Dangerous Method or Function",
+      "cwe_desc": "If the poisoning enables the activation of dangerous internal model functions or behaviors",
+      "description": "Maliciously manipulating the training data of an LLM to introduce vulnerabilities, backdoors, or biases that compromise the model's security and effectiveness.",
+      "mitre": [{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'This is a direct match, as it involves modifying training data to create vulnerabilities.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing the techniques and tools for data poisoning.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the poisoning occurs through a compromised data source in the supply chain.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'Poisoning can lead to the insertion of backdoors into the model.',
+},]
+    }
+  ],
+  "CWE-400": [
+    {
+      owasp_llm_id: "LLM04",
+      "owasp_llm_name": "Model Denial of Service (DoS)",
+      "cwe_name": "Uncontrolled Resource Consumption",
+      "cwe_desc": "This is a primary CWE for DoS attacks, directly applicable to LLMs consuming excessive CPU, memory, or GPU resources due to malicious input.",
+      "description": "Overloading LLMs with resource-heavy operations or complex queries to cause service disruptions, degrade performance, or increase costs",
+      "mitre": [{
+  mitre_id: 'AML.T0005',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0005',
+  mitre_technique_name: 'Denial of ML Service',
+  mitre_technique_desc: 'This is a direct match for the objective of the attack.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'Repeated or complex queries often target the inference API.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing methods to craft resource-intensive queries.',
+},
+{
+  mitre_id: 'AML.T0047',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Resource Exhaustion',
+  mitre_technique_desc: 'A general technique that aligns with the resource consumption aspect.',
+},]
+    }
+  ],
+  "CWE-770": [
+    {
+      owasp_llm_id: "LLM04",
+      "owasp_llm_name": "Model Denial of Service (DoS)",
+      "cwe_name": "Allocation of Resources Without Limits or Throttling",
+      "cwe_desc": "The lack of resource limits enables DoS",
+      "description": "Overloading LLMs with resource-heavy operations or complex queries to cause service disruptions, degrade performance, or increase costs",
+      "mitre": [{
+  mitre_id: 'AML.T0005',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0005',
+  mitre_technique_name: 'Denial of ML Service',
+  mitre_technique_desc: 'This is a direct match for the objective of the attack.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'Repeated or complex queries often target the inference API.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing methods to craft resource-intensive queries.',
+},
+{
+  mitre_id: 'AML.T0047',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Resource Exhaustion',
+  mitre_technique_desc: 'A general technique that aligns with the resource consumption aspect.',
+},]
+    }
+  ],
+    "CWE-125": [
+    {
+      owasp_llm_id: "LLM04",
+      "owasp_llm_name": "Model Denial of Service (DoS)",
+      "cwe_name": "Out-of-bounds Read",
+      "cwe_desc": "In some specific cases, a crafted input might lead to an out-of-bounds read that triggers a crash, resulting in DoS",
+      "description": "Overloading LLMs with resource-heavy operations or complex queries to cause service disruptions, degrade performance, or increase costs",
+      "mitre": [{
+  mitre_id: 'AML.T0005',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0005',
+  mitre_technique_name: 'Denial of ML Service',
+  mitre_technique_desc: 'This is a direct match for the objective of the attack.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'Repeated or complex queries often target the inference API.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing methods to craft resource-intensive queries.',
+},
+{
+  mitre_id: 'AML.T0047',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Resource Exhaustion',
+  mitre_technique_desc: 'A general technique that aligns with the resource consumption aspect.',
+},]
+    }
+  ],
+      "CWE-754": [
+    {
+      owasp_llm_id: "LLM04",
+      "owasp_llm_name": "Model Denial of Service (DoS)",
+      "cwe_name": "Improper Check for Unusual or Exceptional Conditions",
+      "cwe_desc": "If the LLM system fails to handle exceptionally complex or malformed inputs gracefully",
+      "description": "Overloading LLMs with resource-heavy operations or complex queries to cause service disruptions, degrade performance, or increase costs",
+      "mitre": [{
+  mitre_id: 'AML.T0005',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0005',
+  mitre_technique_name: 'Denial of ML Service',
+  mitre_technique_desc: 'This is a direct match for the objective of the attack.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'Repeated or complex queries often target the inference API.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing methods to craft resource-intensive queries.',
+},
+{
+  mitre_id: 'AML.T0047',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Resource Exhaustion',
+  mitre_technique_desc: 'A general technique that aligns with the resource consumption aspect.',
+},]
+    }
+  ],
+  "CWE-915": [
+    {
+      owasp_llm_id: "LLM05",
+      "owasp_llm_name": "Supply Chain Vulnerabilities",
+      "cwe_name": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+      "cwe_desc": "If a component in the supply chain introduces malicious changes to the model's attributes or behavior.",
+      "description": "Risks associated with third-party dependencies and components (pre-trained models, datasets, libraries, plugins) used in developing or deploying LLMs, introducing security weaknesses or backdoors",
+      "mitre": [{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'Directly covers the compromise of any part of the ML supply chain.',
+},
+{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'Can occur via a compromised data supply.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'A compromised component in the supply chain could introduce a backdoor.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'If the attacker is creating malicious components for supply chain compromise.',
+},
+{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the vulnerability is within a third-party plugin.',
+},]
+    }
+  ],
+  "CWE-829": [
+    {
+      owasp_llm_id: "LLM05",
+      "owasp_llm_name": "Supply Chain Vulnerabilities",
+      "cwe_name": "Inclusion of Functionality from Untrusted Control Sphere",
+      "cwe_desc": "Incorporating untrusted or compromised components.",
+      "description": "Risks associated with third-party dependencies and components (pre-trained models, datasets, libraries, plugins) used in developing or deploying LLMs, introducing security weaknesses or backdoors",
+      "mitre": [{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'Directly covers the compromise of any part of the ML supply chain.',
+},
+{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'Can occur via a compromised data supply.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'A compromised component in the supply chain could introduce a backdoor.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'If the attacker is creating malicious components for supply chain compromise.',
+},
+{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the vulnerability is within a third-party plugin.',
+},]
+    }
+  ],
+  "CWE-494": [
+    {
+      owasp_llm_id: "LLM05",
+      "owasp_llm_name": "Supply Chain Vulnerabilities",
+      "cwe_name": "Download of Code Without Integrity Check",
+      "cwe_desc": "If models, datasets, or libraries are downloaded without verifying their integrity.",
+      "description": "Risks associated with third-party dependencies and components (pre-trained models, datasets, libraries, plugins) used in developing or deploying LLMs, introducing security weaknesses or backdoors",
+      "mitre": [{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'Directly covers the compromise of any part of the ML supply chain.',
+},
+{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'Can occur via a compromised data supply.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'A compromised component in the supply chain could introduce a backdoor.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'If the attacker is creating malicious components for supply chain compromise.',
+},
+{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the vulnerability is within a third-party plugin.',
+},]
+    }
+  ],
+  "CWE-502": [
+    {
+      owasp_llm_id: "LLM05",
+      "owasp_llm_name": "Supply Chain Vulnerabilities",
+      "cwe_name": "Deserialization of Untrusted Data",
+      "cwe_desc": "If serialized model artifacts or data from the supply chain contain malicious payloads.",
+      "description": "Risks associated with third-party dependencies and components (pre-trained models, datasets, libraries, plugins) used in developing or deploying LLMs, introducing security weaknesses or backdoors",
+      "mitre": [{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'Directly covers the compromise of any part of the ML supply chain.',
+},
+{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'Can occur via a compromised data supply.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'A compromised component in the supply chain could introduce a backdoor.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'If the attacker is creating malicious components for supply chain compromise.',
+},
+{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the vulnerability is within a third-party plugin.',
+},]
+    }
+  ],
+  "CWE-352": [
+    {
+      owasp_llm_id: "LLM05",
+      "owasp_llm_name": "Supply Chain Vulnerabilities",
+      "cwe_name": "Cross-Site Request Forgery (CSRF)",
+      "cwe_desc": "While not direct, if the supply chain vulnerability leads to a compromised component that facilitates CSRF attacks on users of the LLM application. (Less direct, but a potential consequence)",
+      "description": "Risks associated with third-party dependencies and components (pre-trained models, datasets, libraries, plugins) used in developing or deploying LLMs, introducing security weaknesses or backdoors",
+      "mitre": [{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0004',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'Directly covers the compromise of any part of the ML supply chain.',
+},
+{
+  mitre_id: 'AML.T0016',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0016',
+  mitre_technique_name: 'Training Data Poisoning',
+  mitre_technique_desc: 'Can occur via a compromised data supply.',
+},
+{
+  mitre_id: 'AML.T0017',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0017',
+  mitre_technique_name: 'Backdoor ML Model',
+  mitre_technique_desc: 'A compromised component in the supply chain could introduce a backdoor.',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0018',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'If the attacker is creating malicious components for supply chain compromise.',
+},
+{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the vulnerability is within a third-party plugin.',
+},]
+    }
+  ],
+  "CWE-200": [
+    {
+      owasp_llm_id: "LLM06",
+      "owasp_llm_name": "Sensitive Information Disclosure",
+      "cwe_name": "Exposure of Sensitive Information to an Unauthorized Actor",
+      "cwe_desc": "This is the overarching CWE for any sensitive data leakage.",
+      "description": "LLMs inadvertently revealing confidential or private information through their responses or outputs due to improper data sanitization, poor input handling, or overly permissive outputs",
+      "mitre": [{
+  mitre_id: 'AML.T0037',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0037',
+  mitre_technique_name: 'Exfiltrate Data',
+  mitre_technique_desc: 'The ultimate goal of disclosing sensitive information.',
+},
+{
+  mitre_id: 'AML.T0043',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_desc: 'Can be used to coerce the LLM into revealing sensitive data.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If the disclosure occurs through model responses via an API.',
+},
+{
+  mitre_id: 'AML.T0012',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Data from ML Model',
+  mitre_technique_desc: "The sensitive information is extracted from the model's knowledge or responses.",
+},
+]
+    },
+    {
+      owasp_llm_id: "LLM10",
+      "owasp_llm_name": "Model Theft",
+      "cwe_name": "Exposure of Sensitive Information to an Unauthorized Actor",
+      "cwe_desc": "This is the overarching CWE for any sensitive data leakage.",
+      "description": "Unauthorized copying or replication of a proprietary LLM, leading to intellectual property loss, competitive disadvantage, or potential misuse of the stolen model.",
+      "mitre": [{
+  mitre_id: 'AML.T0010',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0010',
+  mitre_technique_name: 'Exfiltrate ML Model',
+  mitre_technique_desc: 'This is the most direct mapping, focusing on the theft of the model itself.',
+},
+{
+  mitre_id: 'AML.T0009',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0009',
+  mitre_technique_name: 'ML Model Access',
+  mitre_technique_desc: 'Gaining access to the model is a prerequisite for theft.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If an attacker can reconstruct the model by repeatedly querying its API (model extraction/reconstruction)',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing tools or methods for model theft.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the model is stolen during development or deployment phases within the supply chain.',
+},]
+    }
+  ],
+  "CWE-212": [
+    {
+      owasp_llm_id: "LLM06",
+      "owasp_llm_name": "Sensitive Information Disclosure",
+      "cwe_name": "Improper Removal of Sensitive Information Before Release",
+      "cwe_desc": "If sensitive data is not adequately removed from training data or intermediate processing.",
+      "description": "LLMs inadvertently revealing confidential or private information through their responses or outputs due to improper data sanitization, poor input handling, or overly permissive outputs",
+      "mitre": [{
+  mitre_id: 'AML.T0037',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0037',
+  mitre_technique_name: 'Exfiltrate Data',
+  mitre_technique_desc: 'The ultimate goal of disclosing sensitive information.',
+},
+{
+  mitre_id: 'AML.T0043',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_desc: 'Can be used to coerce the LLM into revealing sensitive data.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If the disclosure occurs through model responses via an API.',
+},
+{
+  mitre_id: 'AML.T0012',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Data from ML Model',
+  mitre_technique_desc: "The sensitive information is extracted from the model's knowledge or responses.",
+},
+]
+    }
+  ],
+  "CWE-532": [
+    {
+      owasp_llm_id: "LLM06",
+      "owasp_llm_name": "Sensitive Information Disclosure",
+      "cwe_name": "Inclusion of Sensitive Information in Log Files",
+      "cwe_desc": "If sensitive data appears in logs due to LLM interactions.",
+      "description": "LLMs inadvertently revealing confidential or private information through their responses or outputs due to improper data sanitization, poor input handling, or overly permissive outputs",
+      "mitre": [{
+  mitre_id: 'AML.T0037',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0037',
+  mitre_technique_name: 'Exfiltrate Data',
+  mitre_technique_desc: 'The ultimate goal of disclosing sensitive information.',
+},
+{
+  mitre_id: 'AML.T0043',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_desc: 'Can be used to coerce the LLM into revealing sensitive data.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If the disclosure occurs through model responses via an API.',
+},
+{
+  mitre_id: 'AML.T0012',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Data from ML Model',
+  mitre_technique_desc: "The sensitive information is extracted from the model's knowledge or responses.",
+},
+]
+    }
+  ],
+    "CWE-284": [
+    {
+      owasp_llm_id: "LLM07",
+      "owasp_llm_name": "Insecure Plugin Design",
+      "cwe_name": "Improper Access Control",
+      "cwe_desc": "If plugins have excessive permissions or fail to enforce proper authorization.",
+      "description": "Vulnerabilities in plugins or extensions added to LLMs that process untrusted inputs or have insufficient access controls, leading to exploits like SQL injection or remote code execution.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'Direct match.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the plugin exploits misconfigurations.',
+},
+{
+  mitre_id: 'AML.T0044',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0044',
+  mitre_technique_name: 'LLM Plugin Access',
+  mitre_technique_desc: 'An attacker might first gain access to a vulnerable plugin.',
+},]
+    }
+  ],
+  "CWE-89": [
+    {
+      owasp_llm_id: "LLM07",
+      "owasp_llm_name": "Insecure Plugin Design",
+      "cwe_name": "Improper Neutralization of Special Elements in SQL Command ('SQL Injection')",
+      "cwe_desc": "If a plugin directly uses LLM output in SQL queries without sanitization.",
+      "description": "Vulnerabilities in plugins or extensions added to LLMs that process untrusted inputs or have insufficient access controls, leading to exploits like SQL injection or remote code execution.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'Direct match.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the plugin exploits misconfigurations.',
+},
+{
+  mitre_id: 'AML.T0044',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0044',
+  mitre_technique_name: 'LLM Plugin Access',
+  mitre_technique_desc: 'An attacker might first gain access to a vulnerable plugin.',
+},
+]
+    }
+  ],
+  "CWE-918": [
+    {
+      owasp_llm_id: "LLM07",
+      "owasp_llm_name": "Insecure Plugin Design",
+      "cwe_name": "Server-Side Request Forgery (SSRF)",
+      "cwe_desc": "If an insecure plugin can be tricked into making requests to internal or unauthorized resources.",
+      "description": "Vulnerabilities in plugins or extensions added to LLMs that process untrusted inputs or have insufficient access controls, leading to exploits like SQL injection or remote code execution.",
+      "mitre": [{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'Direct match.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the plugin exploits misconfigurations.',
+},
+{
+  mitre_id: 'AML.T0044',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0044',
+  mitre_technique_name: 'LLM Plugin Access',
+  mitre_technique_desc: 'An attacker might first gain access to a vulnerable plugin.',
+},
+]
+    }
+  ],
+    "CWE-269": [
+    {
+      owasp_llm_id: "LLM08",
+      "owasp_llm_name": "Excessive Agency",
+      "cwe_name": "Improper Privilege Management",
+      "cwe_desc": "The LLM operating with privileges beyond what is necessary for its intended function.",
+      "description": "Granting LLMs unchecked autonomy to take actions or interact with other systems, potentially leading to unintended harmful consequences.",
+      "mitre": [{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the LLM with excessive agency is configured to interact with systems in an unsecure manner.',
+},
+{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the agency is primarily exercised through plugins that can be exploited.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0038',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0038',
+  mitre_technique_name: 'Unauthorized Access to Functionality',
+  mitre_technique_desc: "The LLM, due to excessive agency, might perform actions it shouldn't.",
+},]
+    }
+  ],
+  "CWE-284": [
+    {
+      owasp_llm_id: "LLM08",
+      "owasp_llm_name": "Excessive Agency",
+      "cwe_name": "Improper Access Control",
+      "cwe_desc": "The LLM system itself having broad access, or its associated plugins not enforcing granular controls.",
+      "description": "Granting LLMs unchecked autonomy to take actions or interact with other systems, potentially leading to unintended harmful consequences.",
+      "mitre": [{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the LLM with excessive agency is configured to interact with systems in an unsecure manner.',
+},
+{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the agency is primarily exercised through plugins that can be exploited.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0038',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0038',
+  mitre_technique_name: 'Unauthorized Access to Functionality',
+  mitre_technique_desc: "The LLM, due to excessive agency, might perform actions it shouldn't.",
+},]
+    }
+  ],
+  "CWE-285": [
+    {
+      owasp_llm_id: "LLM08",
+      "owasp_llm_name": "Excessive Agency",
+      "cwe_name": "Improper Authorization",
+      "cwe_desc": "The LLM (or its connected agents/plugins) being authorized to perform actions without proper checks.",
+      "description": "Granting LLMs unchecked autonomy to take actions or interact with other systems, potentially leading to unintended harmful consequences.",
+      "mitre": [{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the LLM with excessive agency is configured to interact with systems in an unsecure manner.',
+},
+{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the agency is primarily exercised through plugins that can be exploited.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0038',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0038',
+  mitre_technique_name: 'Unauthorized Access to Functionality',
+  mitre_technique_desc: "The LLM, due to excessive agency, might perform actions it shouldn't.",
+},]
+    },
+    {
+      owasp_llm_id: "LLM10",
+      "owasp_llm_name": "Model Theft",
+      "cwe_name": "Improper Authorization",
+      "cwe_desc": "The LLM (or its connected agents/plugins) being authorized to perform actions without proper checks.",
+      "description": "Unauthorized copying or replication of a proprietary LLM, leading to intellectual property loss, competitive disadvantage, or potential misuse of the stolen model.",
+      "mitre": [{
+  mitre_id: 'AML.T0010',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0010',
+  mitre_technique_name: 'Exfiltrate ML Model',
+  mitre_technique_desc: 'This is the most direct mapping, focusing on the theft of the model itself.',
+},
+{
+  mitre_id: 'AML.T0009',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0009',
+  mitre_technique_name: 'ML Model Access',
+  mitre_technique_desc: 'Gaining access to the model is a prerequisite for theft.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If an attacker can reconstruct the model by repeatedly querying its API (model extraction/reconstruction)',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing tools or methods for model theft.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the model is stolen during development or deployment phases within the supply chain.',
+},]
+    }
+  ],
+  "CWE-668": [
+    {
+      owasp_llm_id: "LLM08",
+      "owasp_llm_name": "Excessive Agency",
+      "cwe_name": "Exposure of Resource to Wrong Sphere",
+      "cwe_desc": "If the LLM can access or influence resources it shouldn't.",
+      "description": "Granting LLMs unchecked autonomy to take actions or interact with other systems, potentially leading to unintended harmful consequences.",
+      "mitre": [{
+  mitre_id: 'AML.T0001',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0001',
+  mitre_technique_name: 'Abuse System and Network Configuration',
+  mitre_technique_desc: 'If the LLM with excessive agency is configured to interact with systems in an unsecure manner.',
+},
+{
+  mitre_id: 'AML.T0045',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0045',
+  mitre_technique_name: 'LLM Plugin Compromise',
+  mitre_technique_desc: 'If the agency is primarily exercised through plugins that can be exploited.',
+},
+{
+  mitre_id: 'AML.T0002',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0002',
+  mitre_technique_name: 'Command and Scripting Interpreter',
+  mitre_technique_desc: "If the LLM's agency allows it to execute commands.",
+},
+{
+  mitre_id: 'AML.T0038',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0038',
+  mitre_technique_name: 'Unauthorized Access to Functionality',
+  mitre_technique_desc: "The LLM, due to excessive agency, might perform actions it shouldn't.",
+},]
+    }
+  ],
+  "CWE-1008": [
+    {
+      owasp_llm_id: "LLM09",
+      "owasp_llm_name": "Overreliance",
+      "cwe_name": "Uncontrolled Reference to an Index in a Data Structure",
+      "cwe_desc": "If overreliance leads to developers blindly using LLM-generated code that might contain such flaws.",
+      "description": "Users or organizations placing excessive trust in the outputs or capabilities of LLMs for critical tasks without proper human oversight, leading to errors, biased decisions, or security vulnerabilities.",
+      "mitre": [{
+  mitre_id: 'AML.T0036',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0036',
+  mitre_technique_name: 'Influence ML Model Decision Making',
+  mitre_technique_desc: 'If the overreliance leads to unquestioned, biased decisions.',
+},
+{
+  mitre_id: 'AML.T0043',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_desc: 'Leading to harmful advice',
+},]
+    }
+  ],
+  "CWE-1390": [
+    {
+      owasp_llm_id: "LLM09",
+      "owasp_llm_name": "Overreliance",
+      "cwe_name": "Incomplete or Inconsistent Rules Governing Resource Access",
+      "cwe_desc": "If the rules for LLM interaction or output consumption are insufficient due to overreliance.",
+      "description": "Users or organizations placing excessive trust in the outputs or capabilities of LLMs for critical tasks without proper human oversight, leading to errors, biased decisions, or security vulnerabilities.",
+      "mitre": [{
+  mitre_id: 'AML.T0036',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0036',
+  mitre_technique_name: 'Influence ML Model Decision Making',
+  mitre_technique_desc: 'If the overreliance leads to unquestioned, biased decisions.',
+},
+{
+  mitre_id: 'AML.T0043',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0043',
+  mitre_technique_name: 'LLM Prompt Injection',
+  mitre_technique_desc: 'Leading to harmful advice',
+},]
+    }
+  ],
+    "CWE-798": [
+    {
+      owasp_llm_id: "LLM10",
+      "owasp_llm_name": "Model Theft",
+      "cwe_name": "Use of Hard-coded Credentials",
+      "cwe_desc": "If access to the model is protected by hard-coded credentials that can be discovered.",
+      "description": "Unauthorized copying or replication of a proprietary LLM, leading to intellectual property loss, competitive disadvantage, or potential misuse of the stolen model.",
+      "mitre": [{
+  mitre_id: 'AML.T0010',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0010',
+  mitre_technique_name: 'Exfiltrate ML Model',
+  mitre_technique_desc: 'This is the most direct mapping, focusing on the theft of the model itself.',
+},
+{
+  mitre_id: 'AML.T0009',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0009',
+  mitre_technique_name: 'ML Model Access',
+  mitre_technique_desc: 'Gaining access to the model is a prerequisite for theft.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If an attacker can reconstruct the model by repeatedly querying its API (model extraction/reconstruction)',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing tools or methods for model theft.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the model is stolen during development or deployment phases within the supply chain.',
+},]
+    }
+  ],
+  "CWE-913": [
+    {
+      owasp_llm_id: "LLM10",
+      "owasp_llm_name": "Model Theft",
+      "cwe_name": "Improper Control of Interaction Frequency",
+      "cwe_desc": "If model extraction relies on a large number of inference queries, and these are not properly rate-limited.",
+      "description": "Unauthorized copying or replication of a proprietary LLM, leading to intellectual property loss, competitive disadvantage, or potential misuse of the stolen model.",
+      "mitre": [{
+  mitre_id: 'AML.T0010',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0010',
+  mitre_technique_name: 'Exfiltrate ML Model',
+  mitre_technique_desc: 'This is the most direct mapping, focusing on the theft of the model itself.',
+},
+{
+  mitre_id: 'AML.T0009',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0009',
+  mitre_technique_name: 'ML Model Access',
+  mitre_technique_desc: 'Gaining access to the model is a prerequisite for theft.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If an attacker can reconstruct the model by repeatedly querying its API (model extraction/reconstruction)',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing tools or methods for model theft.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the model is stolen during development or deployment phases within the supply chain.',
+},]
+    }
+  ],
+  "CWE-522": [
+    {
+      owasp_llm_id: "LLM10",
+      "owasp_llm_name": "Model Theft",
+      "cwe_name": "Insufficiently Protected Credentials",
+      "cwe_desc": "If the model's repository or access is protected by weak or exposed credentials.",
+      "description": "Unauthorized copying or replication of a proprietary LLM, leading to intellectual property loss, competitive disadvantage, or potential misuse of the stolen model.",
+      "mitre": [{
+  mitre_id: 'AML.T0010',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0010',
+  mitre_technique_name: 'Exfiltrate ML Model',
+  mitre_technique_desc: 'This is the most direct mapping, focusing on the theft of the model itself.',
+},
+{
+  mitre_id: 'AML.T0009',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0009',
+  mitre_technique_name: 'ML Model Access',
+  mitre_technique_desc: 'Gaining access to the model is a prerequisite for theft.',
+},
+{
+  mitre_id: 'AML.T0040',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'ML Model Inference API Access',
+  mitre_technique_desc: 'If an attacker can reconstruct the model by repeatedly querying its API (model extraction/reconstruction)',
+},
+{
+  mitre_id: 'AML.T0018',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Develop Adversarial ML Attack Capabilities',
+  mitre_technique_desc: 'Developing tools or methods for model theft.',
+},
+{
+  mitre_id: 'AML.T0004',
+  mitre_technique_url: 'https://atlas.mitre.org/techniques/AML.T0040',
+  mitre_technique_name: 'Compromise ML Supply Chain',
+  mitre_technique_desc: 'If the model is stolen during development or deployment phases within the supply chain.',
+},]
+    }
+  ],
+}
+
+
+
